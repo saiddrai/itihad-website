@@ -4,18 +4,22 @@
   "info": {
     "singularName": "email",
     "pluralName": "emails",
-    "displayName": "email"
+    "displayName": "email",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "object": {
+    "name": {
       "type": "string"
     },
-    "text": {
-      "type": "richtext"
+    "message": {
+      "type": "text"
+    },
+    "email": {
+      "type": "string"
     }
   }
 }
