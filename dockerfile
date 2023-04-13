@@ -1,19 +1,20 @@
 FROM node:14
 
+ENV NODE_ENV production
+
 # Create app directory
-
 WORKDIR /app
-
-# Install app dependencies
-
 COPY package*.json ./
 
-RUN npm install
-
-# Bundle app source
 
 COPY . .
+# Install app dependencies
+RUN npm i
+
+# Bundle app source
+RUN npm run build
+
 
 EXPOSE 1337
 
-CMD [ "npm", "run", "strapi", "develop" ]
+CMD [ "npm", "start" ]
