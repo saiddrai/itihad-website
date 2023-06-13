@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:16
 
 ENV NODE_ENV production
 
@@ -6,15 +6,16 @@ ENV NODE_ENV production
 WORKDIR /app
 COPY package*.json ./
 
-
 COPY . .
+
 # Install app dependencies
 RUN npm i
 
 # Bundle app source
-RUN npm run build
+RUN npm run strapi build
 
-
+# Expose port 1337
 EXPOSE 1337
 
-CMD [ "npm", "start" ]
+# Start app
+CMD ["npm", "start"]
